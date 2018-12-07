@@ -1,0 +1,15 @@
+#{extends 'main.html' /}
+#{set title:'Détail Produit : ' + produit.nom /}
+
+<br>
+<p><strong>Nom : </strong>${produit.nom}</p>
+<p><strong>Description : </strong>${produit.description}</p>
+<p><strong>Prix : </strong>${produit.prix.format('##,###.00 €')}</p>
+
+
+<br/>
+<a href="@{Application.saveProduittoCommande}" class="btn btn-danger">Ajouter au Panier</a>
+<a href="@{Application.listProduits()}" class="btn btn-secondary">Tous les Produits</a>
+<a href="@{Application.index()}" class="btn btn btn-warning">Retour Accueil</a>
+
+<br><br>

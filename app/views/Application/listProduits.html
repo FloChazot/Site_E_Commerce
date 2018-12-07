@@ -1,0 +1,20 @@
+#{extends 'main.html' /}
+#{set title:'Tous les Produits' /}
+
+<br>
+#{list produits, as:'produit'}
+    <p>
+        <a href="@{Application.saveProduittoCommande}" method="post" class="btn btn-danger">Ajouter au Panier</a>
+        <a href="@{Application.detailProduit(produit.nom, produit.uuid)}" class="btn btn-primary">Voir le produit</a>
+        <strong>${produit.nom}</strong> : ${produit.prix.format('##,###.00 €')} - ${produit.description}
+    </p>
+#{/list}
+
+<br/>
+
+<a href="@{Application.addProduit()}" class="btn btn btn-success">Ajouter Produit</a>
+<a href="@{Application.index()}" class="btn btn btn-warning">Retour Accueil</a>
+
+<br/><br/><br/><br/><br/><br/><br/><br/>
+
+<a href="@{Application.listCommande()}" class="btn btn-danger">Panier</a>

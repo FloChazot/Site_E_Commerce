@@ -1,0 +1,14 @@
+#{extends 'main.html' /}
+#{set title:'Tous les Produits' /}
+
+<br>
+#{list produits, as:'produit'}
+
+<p><a href="@{Application.listCommande}" class="btn btn-primary">Voir le produit</a>
+    <strong>${produit.nom}</strong> : ${produit.prix.format('##,###.00 €')} - ${produit.description}</p>
+
+#{/list}
+
+<br/>
+<a href="@{Application.listProduits()}" class="btn btn-secondary">Tous les Produits</a>
+<a href="@{Application.index()}" class="btn btn btn-warning">Retour Accueil</a>
